@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="content">
+      <div id="container">
+        <h1>Smart Login System</h1>
+
+        <form id="loginForm">
+          <h2>Login</h2>
+
+          <label for="loginEmail">Email:</label>
+          <input type="text" id="loginEmail" required placeholder="Email" />
+
+          <label for="loginPassword">Password:</label>
+          <input
+            type="password"
+            id="loginPassword"
+            required
+            placeholder="password"
+          />
+          <div id="validationLogin" class="invalid-feedback">
+            Please provide a valid credentials.
+          </div>
+
+          <div id="validationEmpty" class="invalid-feedback">
+            All fields are required.
+          </div>
+          <button type="button" id="login-btn">Login</button>
+        </form>
+
+        <div class="acc">
+          Don’t have an account? <a href="register.html">Register</a>
+        </div>
+      </div>
+    </div>
+    <script src="js/main.js"></script>
+  </body>
+</html>
