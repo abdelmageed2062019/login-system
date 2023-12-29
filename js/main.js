@@ -10,7 +10,6 @@ var storedUsers = JSON.parse(localStorage.getItem("users")) || [];
 var currUser = JSON.parse(localStorage.getItem("currentUser"));
 
 //redirect
-showLoading();
 if (!currUser) {
   if (window.location.pathname === "/home.html") {
     window.location.href = "index.html";
@@ -23,7 +22,6 @@ if (!currUser) {
     window.location.href = "home.html";
   }
 }
-hideLoading();
 
 //home content
 if (currUser != null) {
@@ -82,11 +80,7 @@ function register() {
   storedUsers.push(user);
   localStorage.setItem("users", JSON.stringify(storedUsers));
   success.style.display = "block";
-  document.getElementById("validationName").style.display = "none";
-  document.getElementById("validationRegisterEmail").style.display = "none";
-  document.getElementById("validationPassword").style.display = "none";
-  document.getElementById("validationEmpty").style.display = "none";
-  document.getElementById("validationExist").style.display = "none";
+  clearErrors();
 }
 
 function login() {
@@ -113,18 +107,12 @@ function logout() {
   window.location.href = "index.html";
 }
 
-function showLoading() {
-  var loadingOverlay = document.getElementById("loading-overlay");
-  if (loadingOverlay) {
-    loadingOverlay.style.display = "flex";
-  }
-}
-
-function hideLoading() {
-  var loadingOverlay = document.getElementById("loading-overlay");
-  if (loadingOverlay) {
-    loadingOverlay.style.display = "none";
-  }
+function clearErrors() {
+  document.getElementById("validationName").style.display = "none";
+  document.getElementById("validationRegisterEmail").style.display = "none";
+  document.getElementById("validationPassword").style.display = "none";
+  document.getElementById("validationEmpty").style.display = "none";
+  document.getElementById("validationExist").style.display = "none";
 }
 
 //events
